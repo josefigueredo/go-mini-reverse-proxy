@@ -28,7 +28,7 @@ func (t *transport) RoundTrip(req *http.Request) (resp *http.Response, err error
 	if err != nil {
 		return nil, err
 	}
-	b = bytes.Replace(b, []byte("some text o patter to replace"), []byte("the replacement"), -1)
+	b = bytes.Replace(b, []byte("some text or patter to replace"), []byte("the replacement"), -1)
 	body := ioutil.NopCloser(bytes.NewReader(b))
 	resp.Body = body
 	resp.ContentLength = int64(len(b))
